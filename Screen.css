@@ -1,0 +1,96 @@
+body {
+    background-image: url(IMGs/backgroundIMG2.jpg);
+    color: aliceblue;
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove paddings padrão */
+    font-family: Arial, sans-serif; /* Adiciona uma fonte padrão */
+}
+
+header {
+    display: flex;
+    justify-content: space-between; /* Alinha o título à esquerda e a nav à direita */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 20px;
+    max-width: 1200px; /* Define uma largura máxima */
+    margin: 0 auto; /* Centraliza o header na página */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para melhor legibilidade */
+}
+
+header h1 {
+    color: #dd0f0f; /* Rosa neon */
+    font-size: 2rem;
+    margin: 0; /* Remove margens padrão */
+}
+
+nav a {
+    color: aliceblue;
+    text-decoration: none;
+    margin-left: 20px; /* Espaçamento entre os links */
+    font-size: 1.5rem;
+}
+
+nav a:hover {
+    color: #dd0f0f; /* Rosa neon ao passar o mouse */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center; /* Centraliza o texto */
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.floating-halter{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+.floating-halter img{
+    width: 100px;
+    height: auto;
+    position: absolute;
+    animation: bounce 8s infinite linear; /* Aplica a animação */
+}
+@keyframes bounce{
+    0% {
+        transform: translate(0, 0); /* Começa no canto superior esquerdo */
+    }
+    25% {
+        transform: translate(calc(100vw - 100px), 0); /* Move para a direita */
+    }
+    50% {
+        transform: translate(calc(100vw - 100px), calc(100vh - 100px)); /* Move para o canto inferior direito */
+    }
+    75% {
+        transform: translate(0, calc(100vh - 100px)); /* Move para a esquerda */
+    }
+    100% {
+        transform: translate(0, 0); /* Volta ao canto superior esquerdo */
+    }
+}

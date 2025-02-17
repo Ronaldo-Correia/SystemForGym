@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    color: #dd0f0f;
+    font-family: "Montserrat";
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ background-image: url(IMGs/backgroundIMG2.jpg);
+}

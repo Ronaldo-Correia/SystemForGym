@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    color: #dd0f0f;
+    font-family: "Montserrat";
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ background-image: url(IMGs/backgroundIMG2.jpg);
+}
+form {
+padding: 50px;
+border-radius: 20px;
+background-color: white;
+font-size: 1.5rem;
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+.barra{
+    background-color:#000000 ;
+    height: 5px;
+    width: 260px;
+}
+.display-input{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.Lembrar{
+    display: flex;
+    gap: 7px;
+}
+
+input{
+    height: 30px;
+    border-radius: 10px;
+    background-color: rgb(214, 211, 211);
+}
+button{
+    align-self:center;
+    width: 200px;
+    height:40px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 20px;
+    color:white;
+    background-image: linear-gradient(#dd0f0f,#351818);
+}
+a{
+    color: #0f8bdd;
+}
