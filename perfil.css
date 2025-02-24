@@ -16,6 +16,7 @@ body {
     
 }
 form {
+    margin-top: 10%;
     color: #dd0f0f;
     padding: 20px;
     border-radius: 20px;
@@ -24,8 +25,9 @@ form {
     display: flex;
     flex-direction: column;
     width: 22%;
-    margin: 0 auto; 
-    
+    display: flex;
+    justify-content: center;
+    margin: auto;    
 
 }
 header {
