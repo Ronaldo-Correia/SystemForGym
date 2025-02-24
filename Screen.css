@@ -1,22 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-image: url(IMGs/backgroundIMG2.jpg);
-    color: aliceblue;
-    background-size: cover;
-    background-position: left;
+    color: #333;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo verticalmente */
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da tela */
     background-repeat: no-repeat;
-    margin: 0; /* Remove margens padrão */
-    padding: 0; /* Remove paddings padrão */
-    font-family: Arial, sans-serif; /* Adiciona uma fonte padrão */
+    background-size: cover;
+    background-image: url(IMGs/backgroundIMG2.jpg);
+    
 }
 
 header {
     display: flex;
-    justify-content: space-between; /* Alinha o título à esquerda e a nav à direita */
-    align-items: center; /* Centraliza verticalmente */
-    padding: 20px;
-    max-width: 1200px; /* Define uma largura máxima */
-    margin: 0 auto; /* Centraliza o header na página */
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para melhor legibilidade */
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1200px;
+        background-color: rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
@@ -30,18 +38,20 @@ nav a {
     text-decoration: none;
     margin-left: 20px; /* Espaçamento entre os links */
     font-size: 1.5rem;
+    transition: transform 0.3s ease; 
 }
 
 nav a:hover {
-    color: #dd0f0f; /* Rosa neon ao passar o mouse */
+ transform: scale(1.1);     color: #dd0f0f; /* Rosa neon ao passar o mouse */
+ 
 }
 
 main {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center; /* Centraliza o texto */
+    flex-direction: column; /* Organiza os elementos em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    padding: 10px;
+    text-align: center;
 }
 
 .hero h2 {
@@ -77,6 +87,7 @@ footer {
     position: absolute;
     animation: bounce 8s infinite linear; /* Aplica a animação */
 }
+
 @keyframes bounce{
     0% {
         transform: translate(0, 0); /* Começa no canto superior esquerdo */
@@ -93,4 +104,82 @@ footer {
     100% {
         transform: translate(0, 0); /* Volta ao canto superior esquerdo */
     }
+}
+/* Estilo do Contêiner dos Ícones */
+.menu-icones {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 800px;
+    margin-top: 10%;
+}
+
+/* Estilo de Cada Ícone */
+.icone {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    background-color:white;
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.icone img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Efeito ao Passar o Mouse */
+.icone:hover {
+    transform: scale(1.1);
+    background-color: #dd0f0f;
+}
+
+/* Estilo do Tooltip */
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Mostrar o Tooltip ao Passar o Mouse */
+.icone:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+/* Estilo da Seção Dinâmica */
+#conteudo-dinamico {
+    width: 50%; /* Largura da seção */
+    max-width: 800px; /* Largura máxima */
+    margin: 10px auto; /* Centraliza e adiciona espaçamento */
+    padding: 10px;
+    text-align: center; /* Alinhamento do texto */
+}
+
+#conteudo-dinamico h2 {
+    color: #dd0f0f; /* Rosa neon */
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#conteudo-dinamico p {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0;
 }

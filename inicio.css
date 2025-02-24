@@ -14,3 +14,7 @@ body {
     background-size: cover;
  background-image: url(IMGs/backgroundIMG2.jpg);
 }
+button:hover {
+    transform: scale(1.05);
+    background-image:linear-gradient(#dd0f0f,#dd0f0f);
+}
