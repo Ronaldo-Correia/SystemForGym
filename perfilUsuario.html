@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Sistem For Gym</title>
+    <link rel="stylesheet" href="assets/Styles/perfilUsuario.css">
+    <link rel="shortcut icon" href="assets/Styles/IMGs/icon.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1 class="title">SistemForGym</h1>
+        <nav>
+            <a href="ScreenInitial.html">Início</a>
+            <a href="login.html">Sair</a>
+        </nav>
+    </header>
+
+    <form id="formPerfil">
+        <h1 class="title">Edite o seu perfil</h1>
+        <div class="barra"></div>
+
+        <!-- Círculo com a foto -->
+        <div class="foto-perfil">
+            <img id="foto-usuario" src="assets/Styles/IMGs/perfil.png" alt="Foto do usuário">
+            <label for="foto" class="upload-label">+</label>
+            <input type="file" id="foto" accept="image/*" />
+        </div>
+
+        <div class="display-input">
+            <label for="nome">Seu nome:</label>
+            <input type="text" id="nome" placeholder="Digite seu nome" required />
+        </div>
+
+        <div class="display-input">
+            <label for="dateNasc">Sua data de nascimento:</label>
+            <input type="date" id="dateNasc" required />
+        </div>
+
+        <div class="display-input">
+            <label for="altura">Sua altura em metros:</label>
+            <input type="number" id="altura" placeholder="Ex: 1.75" step="0.01" min="0" required />
+        </div>
+
+        <div class="display-input">
+            <label for="peso">Seu peso em kg:</label>
+            <input type="number" id="peso" placeholder="Ex: 70.5" step="0.1" min="0" required />
+        </div>
+
+        <button type="submit">Salvar</button>
+        <div id="mensagem" class="mensagem"></div>
+    </form>
+
+    <!-- Scripts do Firebase e do Perfil -->
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-storage.js"></script>
+    <script src="Scripts/perfil.js"></script>
+</body>
+</html>

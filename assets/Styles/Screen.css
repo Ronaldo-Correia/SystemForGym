@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    color: #333;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo verticalmente */
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da tela */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(IMGs/backgroundIMG2.jpg);
+    
+    
+}
+
+header {
+    display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1200px;
+        background-color: rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    color: #dd0f0f; /* Rosa neon */
+    font-size: 2rem;
+    margin: 0; /* Remove margens padrão */
+}
+
+nav a {
+    color: aliceblue;
+    text-decoration: none;
+    margin-left: 20px; /* Espaçamento entre os links */
+    font-size: 1.5rem;
+    transition: transform 0.3s ease; 
+}
+
+nav a:hover {
+ transform: scale(1.1);     color: #dd0f0f; /* Rosa neon ao passar o mouse */
+ 
+}
+
+main {
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    padding: 10px;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.floating-halter{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+.floating-halter img{
+    width: 100px;
+    height: auto;
+    position: absolute;
+    animation: bounce 8s infinite linear; /* Aplica a animação */
+}
+
+@keyframes bounce{
+    0% {
+        transform: translate(0, 0); /* Começa no canto superior esquerdo */
+    }
+    25% {
+        transform: translate(calc(100vw - 100px), 0); /* Move para a direita */
+    }
+    50% {
+        transform: translate(calc(100vw - 100px), calc(100vh - 100px)); /* Move para o canto inferior direito */
+    }
+    75% {
+        transform: translate(0, calc(100vh - 100px)); /* Move para a esquerda */
+    }
+    100% {
+        transform: translate(0, 0); /* Volta ao canto superior esquerdo */
+    }
+}
+/* Estilo do Contêiner dos Ícones */
+.menu-icones {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 800px;
+    margin-top: 10%;
+}
+
+/* Estilo de Cada Ícone */
+.icone {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    background-color:white;
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.icone img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Efeito ao Passar o Mouse */
+.icone:hover {
+    transform: scale(1.1);
+    background-color: #dd0f0f;
+}
+
+/* Estilo do Tooltip */
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Mostrar o Tooltip ao Passar o Mouse */
+.icone:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+#conteudo-dinamico {
+    width: 50%;
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: white; /* Fundo branco */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    min-height: 150px; /* Altura mínima para evitar sumir */
+}
+.IconLogin{
+    display: block;
+    background-color: rgb(18, 177, 84);
+}
+/* Estilos para o plano de calistenia */
+.plano-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.meta-box {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid #dd0f0f;
+}
+
+.dias-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.dia-box {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-top: 3px solid #dd0f0f;
+}
+
+.dia-box h3 {
+    color: #dd0f0f;
+    margin-bottom: 10px;
+}
+
+.dia-box ul {
+    padding-left: 20px;
+}
+
+.dia-box li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.dicas-box, .nutricao-box {
+    background-color: #f0f7ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 4px solid #4a90e2;
+}
+
+.nutricao-box {
+    background-color: #f0fff4;
+    border-left-color: #38a169;
+}
+
+.progresso-box {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.grafico-placeholder {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 15px 0;
+    border: 1px dashed #ccc;
+}
+
+.btn-registro {
+    background: linear-gradient(#dd0f0f, #9e0b0b);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: transform 0.3s;
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-registro:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para ícone ativo */
+.icone.ativo {
+    background-color: #dd0f0f;
+    transform: scale(1.1);
+}
+
+.icone.ativo img {
+    filter: brightness(0) invert(1);
+}

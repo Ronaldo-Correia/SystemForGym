@@ -3,45 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem For Gym</title>
-    <link rel="stylesheet" href="login.css">
-    <link rel="shortcut icon" href="IMGs/icon.png" type="image/x-icon">
+    <title>Login - Sistem For Gym</title>
+    <link rel="stylesheet" href="assets/Styles/login.css">
+    <link rel="shortcut icon" href="assets/Styles/IMGs/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<header>
-    <h1 class="title">SistemForGym</h1>
-    <nav>
-        <a href="ScreenInitial.html">Início</a>
-        <a href="login.html">Login</a>
-        <a href="cadastro.html">Cadastre-se</a>
-        <a href="SaibaMais.html">Saiba mais</a>
-    </nav>
-</header>
 <body>
-    <form action="">
-    <h1 class="title">Faça o seu login</h1>
-    <div class="barra"></div>
+    <header>
+        <h1 class="title">SistemForGym</h1>
+        <nav>
+            <a href="ScreenInitial.html">Início</a>
+            <a href="login.html">Login</a>
+            <a href="cadastro.html">Cadastre-se</a>
+            <a href="SaibaMais.html">Saiba mais</a>
+        </nav>
+    </header>
 
-<div class="display-input">
-    <label for="email">Seu e-mail:</label>
-    <input type="email" id="email"placeholder="Digite seu nome"  />
-</div>
+    <form>
+        <h1 class="title">Faça o seu login</h1>
+        <div class="barra"></div>
 
-<div class="display-input">
-    <label for="password">Sua senha:</label>
-    <input type="password" id="password" placeholder="Digite sua senha"  />
+        <div class="display-input">
+            <label for="email">Seu e-mail:</label>
+            <input type="email" id="email" placeholder="Digite seu e-mail" />
+        </div>
 
-</div>    
-    
-<div class="Lembrar">        
-    Lembrar-me
-    <label for="lembrar">
-        <input type="checkbox" id="lembrar" name="lembrar">
-    </label>
-</div>
-    <button id="buttonLogin">Entrar</button>
-    <br>
-    <p>Esqueceu sua senha?<a href="cadastro.html">Clique aqui!</a></p>
+        <div class="display-input">
+            <label for="password">Sua senha:</label>
+            <div class="password-container">
+                <input type="password" id="password" placeholder="Digite sua senha" required>
+                <span id="togglePassword" class="toggle-password"><i class="fas fa-eye"></i></span>
+            </div>
+        </div>
 
-</form>
+        <div class="Lembrar">        
+            Lembrar-me
+            <label for="lembrar">
+                <input type="checkbox" id="lembrar" name="lembrar">
+            </label>
+        </div>
+
+        <button id="buttonLogin">Entrar</button>
+        <br>
+        <div id="mensagem" class="mensagem"></div>
+        <br>
+        <p>Esqueceu sua senha? <a href="#" id="esqueciSenhaLink">Clique aqui!</a></p>
+    </form>
+
+    <!-- Scripts -->
+    <script type="module" src="Scripts/login.js"></script>
 </body>
 </html>

@@ -4,13 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem For Gym</title>
-    <link rel="shortcut icon" href="IMGs/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="Screen.css">
+    <link rel="shortcut icon" href="assets/Styles/IMGs/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/Styles/Screen.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem For Gym</title>
+    <link rel="shortcut icon" href="assets/Styles/IMGs/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/Styles/Screen.css">
+    <!-- Adicione o Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
     <header>
         <div class="floating-halter">
-            <img src="IMGs/halter.png" alt="Halter flutuante">
+            <img src="assets/Styles/IMGs/halter.png" alt="Halter flutuante">
         </div>
         <h1 class="title">SistemForGym</h1>
         <nav>
@@ -18,6 +31,7 @@
             <a href="login.html">Login</a>
             <a href="cadastro.html">Cadastre-se</a>
             <a href="SaibaMais.html">Saiba mais</a>
+            <a href="login.html" class="login-link" onclick="logout()">Trocar Conta</a>
         </nav>
     </header>
 
@@ -25,79 +39,61 @@
         <!-- Seção de Ícones Clicáveis -->
         <section class="menu-icones">
             <div class="icone" onclick="mostrarConteudo('progresso')">
-                <img src="IMGs/progresso.png" alt="Progresso">
+                <img src="assets/Styles/IMGs/progresso.png" alt="Progresso">
                 <span class="tooltip">Acompanhamento</span>
             </div>
             <div class="icone" onclick="mostrarConteudo('aulas')">
-                <img src="IMGs/aulas.png" alt="Aulas">
+                <img src="assets/Styles/IMGs/aulas.png" alt="Aulas">
                 <span class="tooltip">Aulas</span>
             </div>
             <div class="icone" onclick="mostrarConteudo('sobre')">
-                <img src="IMGs/sobre.png" alt="Sobre">
+                <img src="assets/Styles/IMGs/sobre.png" alt="Sobre">
                 <span class="tooltip">Sobre</span>
             </div>
             <div class="icone" onclick="mostrarConteudo('contato')">
-                <img src="IMGs/contato2.png" alt="Contato">
+                <img src="assets/Styles/IMGs/contato2.png" alt="Contato">
                 <span class="tooltip">Contato</span>
             </div>
             <div class="icone" onclick="mostrarConteudo('usuario')">
-                <img src="IMGs/usuario.png" alt="Usuário">
+                <img src="assets/Styles/IMGs/usuario.png" alt="Usuário">
                 <span class="tooltip">Área do Usuário</span>
             </div>
         </section>
 
-     <section id="conteudo-dinamico">
+        <!-- Conteúdo Dinâmico -->
+        <section id="conteudo-dinamico">
             <h2>Bem-vindo ao SistemForGym</h2>
             <p>Criado para auxiliar seu corpo com dicas de treinos e dietas.</p>
         </section>
     </main>
-   
+
     <footer>
         <p>&copy; 2025 SistemForGym</p>
     </footer>
 
     <script>
-        function mostrarConteudo(tipo) {
-            const conteudoDinamico = document.getElementById('conteudo-dinamico');
+        // Configuração do Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCNgGzmzuTXGuWKNSYHlwdf3Smj-unr-cY",
+            authDomain: "system-for-gym.firebaseapp.com",
+            projectId: "system-for-gym",
+            storageBucket: "system-for-gym.appspot.com",
+            messagingSenderId: "243494675657",
+            appId: "1:243494675657:web:2578fc5727faa84e499918",
+            measurementId: "G-NVF79TLDEK"
+        };
 
-            switch (tipo) {
-                case 'progresso':
-                    conteudoDinamico.innerHTML = `
-                        <h2>Acompanhamento de Progresso</h2>
-                        <p>Gráficos e métricas de evolução...</p>
-                    `;
-                    break;
-                case 'aulas':
-                    conteudoDinamico.innerHTML = `
-                        <h2>Aulas</h2>
-                        <p>Agenda de aulas disponíveis...</p>
-                    `;
-                    break;
-                case 'sobre':
-                    conteudoDinamico.innerHTML = `
-                        <h2>Sobre a Academia</h2>
-                        <p>Descrição da academia...</p>
-                    `;
-                    break;
-                case 'contato':
-                    conteudoDinamico.innerHTML = `
-                        <h2>Contato</h2>
-                        <p>Formulário de contato...</p>
-                    `;
-                    break;
-                case 'usuario':
-                    conteudoDinamico.innerHTML = `
-                        <h2>Área do Usuário</h2>
-                        <p>Informações pessoais e próximas aulas...</p>
-                    `;
-                    break;
-                default:
-                    conteudoDinamico.innerHTML = `
-                        <h2>Bem-vindo ao SistemForGym</h2>
-                        <p>Criado para auxiliar seu corpo com dicas de treinos e dietas.</p>
-                    `;
-            }
+        // Inicialize o Firebase
+        firebase.initializeApp(firebaseConfig);
+        const analytics = firebase.analytics();
+    </script>
+
+    <script>
+        function logout() {
+            localStorage.removeItem('loggedInUser');
+            window.location.href = 'login.html';
         }
     </script>
+    <script src="Scripts/Screen.js"></script>
 </body>
 </html>
